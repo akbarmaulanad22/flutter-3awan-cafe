@@ -1,16 +1,90 @@
-# flutter3awancafe
+# 🍽️ Flutter - 3awan Cafe
 
-A new Flutter project.
+Aplikasi mobile sederhana untuk menampilkan menu cafe, memesan makanan, dan mengelola keranjang belanja.  
+Dibuat menggunakan **Flutter + Provider (State Management)** dan terhubung ke API Flask.
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## 📦 Cara Install & Run
 
-A few resources to get you started if this is your first Flutter project:
+### 1️⃣ Clone Repository
+```sh
+git clone https://github.com/akbarmaulanad22/flutter-3awan-cafe.git
+cd flutter-3awan-cafe
+```
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### 2️⃣ Install Dependencies
+```sh
+flutter pub get
+```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### 3️⃣ Jalankan Aplikasi
+```sh
+flutter run
+```
+
+Pastikan API Flask sudah berjalan dan URL API sudah disesuaikan di menu_service.dart dan order_service.dart.
+
+#### 🧱 Struktur Folder Project
+``` css
+Copy code
+lib/
+├── core/
+│   ├── constants/
+│   └── utils/
+│
+├── data/
+│   ├── models/
+│   │   ├── cart_item.dart
+│   │   └── menu.dart
+│   │
+│   ├── services/
+│   │   ├── menu_service.dart
+│   │   └── order_service.dart
+│   │
+│   └── domain/
+│       └── repositories/
+│
+├── presentations/
+│   ├── viewmodels/
+│   │   ├── cart_viewmodel.dart
+│   │   └── home_viewmodel.dart
+│   │
+│   └── views/
+│       ├── widgets/
+│       │   └── menu_card.dart
+│       ├── home_view.dart
+│       ├── cart_view.dart
+│       └── order_view.dart
+│
+├── app.dart
+└── main.dart
+```
+
+### 🔗 Koneksi API
+Pastikan kamu mengganti base URL pada file:
+
+``` bash
+lib/data/services/menu_service.dart
+lib/data/services/order_service.dart
+```
+
+Contoh:
+
+``` dart
+final String baseUrl = "https://your-railway-api-url.up.railway.app";
+```
+
+## 🧭 Halaman yang Tersedia
+
+| Halaman | Deskripsi |
+|--------|-----------|
+| **Home** | Menampilkan daftar menu dari API |
+| **Cart** | Menampilkan item yang sudah ditambahkan ke keranjang |
+| **Order** | Menampilkan daftar / riwayat pesanan |
+
+## 🤝 Kontribusi
+Pull request dipersilakan. Silakan edit sesuai kebutuhan dan kembangkan fitur sesuai kreativitasmu 🎨
+
+## 🚀 License
+Project ini dibuat untuk keperluan pembelajaran dan bebas diadaptasi.
